@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{%load static%}
+ {%block content %}
+    {{block.super}}
+    <h1>i ma insight first app</h1>
+    <img src="{%static 'tiger2.jpeg'%}" alt="tiger2">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">user id</th>
+                <th scope="col">id</th>
+                <th scope="col">title</th>
+                <th scope="col">body</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for i in data%}
+            <tr>
+                <th scope="row">{{i.userId}}</th>
+                <td>{{i.id}}</td>
+                <td>{{i.title}}</td>
+                <td>{{i.body}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{%endblock%}
+
+
+    
